@@ -1,0 +1,90 @@
+;
+; mousedriver1.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=mousedriver1.cat
+DriverVer = 05/18/2021,0.28.34.720
+PnpLockDown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+mousedriver1_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+mousedriver1.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTx86
+
+[Standard.NTx86]
+%mousedriver1.DeviceDesc%=mousedriver1_Device, Root\mousedriver1 ; TODO: edit hw-id
+
+[mousedriver1_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+mousedriver1.sys
+
+;-------------- Service installation
+[mousedriver1_Device.NT.Services]
+AddService = mousedriver1,%SPSVCINST_ASSOCSERVICE%, mousedriver1_Service_Inst
+
+; -------------- mousedriver1 driver install sections
+[mousedriver1_Service_Inst]
+DisplayName    = %mousedriver1.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\mousedriver1.sys
+
+;
+;--- mousedriver1_Device Coinstaller installation ------
+;
+
+[mousedriver1_Device.NT.CoInstallers]
+AddReg=mousedriver1_Device_CoInstaller_AddReg
+CopyFiles=mousedriver1_Device_CoInstaller_CopyFiles
+
+[mousedriver1_Device_CoInstaller_AddReg]
+;
+
+
+[mousedriver1_Device_CoInstaller_CopyFiles]
+;
+
+
+[mousedriver1_Device.NT.Wdf]
+KmdfService =  mousedriver1, mousedriver1_wdfsect
+[mousedriver1_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "mousedriver1 Installation Disk"
+mousedriver1.DeviceDesc = "mousedriver1 Device"
+mousedriver1.SVCDESC = "mousedriver1 Service"

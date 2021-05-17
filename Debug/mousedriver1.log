@@ -1,0 +1,8 @@
+﻿  Building 'mousedriver1' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping Debug\mousedriver1.inf
+  Stamping [Version] section with DriverVer=05/18/2021,0.28.34.720
+  Source.c
+C:\Users\Mihir\source\repos\mousedriver1\Source.c(43,68): error C2220: the following warning is treated as an error
+C:\Users\Mihir\source\repos\mousedriver1\Source.c(43,68): warning C4100: 'Context': unreferenced formal parameter
+C:\Users\Mihir\source\repos\mousedriver1\Source.c(43,38): warning C4100: 'DeviceObject': unreferenced formal parameter
+C:\Users\Mihir\source\repos\mousedriver1\Source.c(88,67): warning C4100: 'RegistryPath': unreferenced formal parameter
