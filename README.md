@@ -12,7 +12,6 @@ To disable Driver signing you can also go to Settings --> Update & Security --> 
 Inside advanced startup, click Troublshoot --> Advanced Options --> Startup Settings --> Restart
 Then Press F7 to disbale Driver Signature Enforcement
 #### Note-> This will disable Driver Signing till you restart the computer
-**Another link to fix this**
 [Another resource to fix this problem](https://www.wintips.org/how-to-fix-windows-cannot-verify-the-digital-signature-for-this-file-error-in-windows-8-7-vista/)
 
 
