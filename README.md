@@ -20,6 +20,8 @@ Make a new project using the **KMDF (Empty)** Framework, and add a ``Source.c`` 
 **VM Used**
 - Windows 8.1 (64-bit)
 - [Virtual Box only](https://www.virtualbox.org/)
+- ![Capture2 width=300](https://user-images.githubusercontent.com/72495317/119021340-f1674800-b9bc-11eb-9094-43ead50569a3.jpg)
+
 
 **Disable Integrity Checks** -  
 - Click the “Start” button.
@@ -48,6 +50,7 @@ Then Press F7 to disbale Driver Signature Enforcement
 ## Debug View
 - Click on Windows Icon and Gear Icon in the nav bar.
 - Enable Kernel Verbose Log Option to see the output.
+- ![Capture](https://user-images.githubusercontent.com/72495317/119021167-b5cc7e00-b9bc-11eb-89d8-47dd7af10a07.PNG)
 
 ## Software Requirements 
 - [OSR Loader](http://www.osronline.com/OsrDown.cfm/osrloaderv30.zip%5Ename=osrloaderv30.zip&id=157)
